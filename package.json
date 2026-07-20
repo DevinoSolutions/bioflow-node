@@ -1,0 +1,70 @@
+{
+  "name": "@getbioflow/sdk",
+  "version": "0.1.0",
+  "description": "Official TypeScript SDK for the BioFlow public API (https://app.getbioflow.com/v1)",
+  "license": "MIT",
+  "type": "module",
+  "sideEffects": false,
+  "engines": {
+    "node": ">=18.17"
+  },
+  "exports": {
+    ".": "./src/index.ts",
+    "./package.json": "./package.json"
+  },
+  "publishConfig": {
+    "access": "public",
+    "main": "./dist/index.cjs",
+    "module": "./dist/index.js",
+    "types": "./dist/index.d.ts",
+    "exports": {
+      ".": {
+        "import": {
+          "types": "./dist/index.d.ts",
+          "default": "./dist/index.js"
+        },
+        "require": {
+          "types": "./dist/index.d.cts",
+          "default": "./dist/index.cjs"
+        }
+      },
+      "./package.json": "./package.json"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DevinoSolutions/bioflow-sdk.git"
+  },
+  "homepage": "https://getbioflow.com/developers",
+  "bugs": {
+    "url": "https://github.com/DevinoSolutions/bioflow-sdk/issues"
+  },
+  "keywords": [
+    "bioflow",
+    "link-in-bio",
+    "api",
+    "sdk",
+    "typescript",
+    "webhooks",
+    "standard-webhooks"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "prepublishOnly": "pnpm build",
+    "test": "vitest run",
+    "typecheck": "tsc --project tsconfig.json"
+  },
+  "devDependencies": {
+    "@types/node": "^22",
+    "eslint": "^9.36.0",
+    "openapi-typescript": "7.13.0",
+    "tsup": "8.5.1",
+    "typescript": "^5.9.3",
+    "vitest": "^4.1.2"
+  }
+}

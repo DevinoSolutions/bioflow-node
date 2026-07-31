@@ -1,0 +1,4 @@
+
+> @getbioflow/sdk@0.1.1 lint C:\Users\alaed\Documents\Github\bioflow\packages\sdk
+> eslint src --max-warnings=0
+

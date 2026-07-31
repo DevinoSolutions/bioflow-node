@@ -67,10 +67,11 @@ class MockApi {
         responder(recorded, res);
       });
     });
+    const server = this.server;
     await new Promise<void>((resolve) =>
-      this.server?.listen(0, "127.0.0.1", resolve),
+      server.listen(0, "127.0.0.1", resolve),
     );
-    const { port } = this.server?.address() as AddressInfo;
+    const { port } = server.address() as AddressInfo;
     this.baseUrl = `http://127.0.0.1:${port}`;
     return this.baseUrl;
   }

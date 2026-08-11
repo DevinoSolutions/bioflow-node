@@ -1,4 +1,4 @@
-# @getbioflow/sdk
+# @bioflow/sdk
 
 The official TypeScript SDK for the [BioFlow](https://getbioflow.com) public
 API (`https://app.getbioflow.com/v1`) — typed access to pages, blocks,
@@ -15,15 +15,18 @@ publishing, contacts, files, analytics, usage, and outbound webhooks, plus a
 ## Install
 
 ```sh
-npm install @getbioflow/sdk
+npm install @bioflow/sdk
 ```
+
+> Previously published as `@getbioflow/sdk`. That scope is deprecated — switch
+> the import path; the API is unchanged.
 
 ## Quickstart
 
 Create an API key in **BioFlow → Settings** (Creator or Pro plan), then:
 
 ```ts
-import BioFlow from "@getbioflow/sdk";
+import BioFlow from "@bioflow/sdk";
 
 const bioflow = new BioFlow({ apiKey: process.env.BIOFLOW_API_KEY! });
 
@@ -52,7 +55,7 @@ import {
   NotFoundError,
   QuotaExhaustedError,
   RateLimitError,
-} from "@getbioflow/sdk";
+} from "@bioflow/sdk";
 
 try {
   await bioflow.pages.get("pg_missing");
@@ -105,7 +108,7 @@ Verify BEFORE parsing, against the **raw** request bytes — any re-serialize
 breaks the signature. Rotation overlap (two signatures) is handled.
 
 ```ts
-import { verifyWebhook, WebhookVerificationError } from "@getbioflow/sdk";
+import { verifyWebhook, WebhookVerificationError } from "@bioflow/sdk";
 
 app.post("/bioflow-webhooks", express.raw({ type: "*/*" }), (req, res) => {
   let event;
@@ -171,7 +174,7 @@ new BioFlow({
 ## Development
 
 This package is developed in the private BioFlow monorepo and mirrored to
-[DevinoSolutions/bioflow-sdk](https://github.com/DevinoSolutions/bioflow-sdk);
+[DevinoSolutions/bioflow-node](https://github.com/DevinoSolutions/bioflow-node);
 issues and PRs are welcome on the mirror. Docs:
 [getbioflow.com/developers](https://getbioflow.com/developers).
 

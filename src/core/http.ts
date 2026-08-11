@@ -128,7 +128,7 @@ export class HttpCore {
     }
     if (isBrowserLike() && options.dangerouslyAllowBrowser !== true) {
       throw new BioFlowError(
-        "@getbioflow/sdk was loaded in a browser-like environment. bf_ API keys are secrets and must stay server-side. If you really know what you are doing, pass { dangerouslyAllowBrowser: true }.",
+        "@bioflow/sdk was loaded in a browser-like environment. bf_ API keys are secrets and must stay server-side. If you really know what you are doing, pass { dangerouslyAllowBrowser: true }.",
       );
     }
     this.apiKey = options.apiKey;

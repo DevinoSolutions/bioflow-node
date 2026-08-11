@@ -14,7 +14,7 @@ import { Webhooks } from "./webhooks";
  * The BioFlow public-API client.
  *
  * ```ts
- * import BioFlow from "@getbioflow/sdk";
+ * import BioFlow from "@bioflow/sdk";
  * const bioflow = new BioFlow({ apiKey: process.env.BIOFLOW_API_KEY! });
  * for await (const page of await bioflow.pages.list()) console.log(page.slug);
  * ```

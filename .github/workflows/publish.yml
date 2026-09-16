@@ -8,6 +8,7 @@ on:
 jobs:
   publish:
     runs-on: ubuntu-latest
+    timeout-minutes: 60
     permissions:
       contents: read
       # Required for npm trusted publishing (OIDC). No NPM_TOKEN secret is used.
